@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 
 from flask import Flask 
 
+from app.utils.db import db
+
 from app.controller.employees_controller import employees
 from app.controller.departments_controller import departments
 from app.controller.jobs_controller import jobs
@@ -17,5 +19,9 @@ def create_app(env='prod'):
     app.register_blueprint(employees, url_prefix='/employees')
     app.register_blueprint(departments, url_prefix='/departments')
     app.register_blueprint(jobs, url_prefix='/jobs')
+
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
 
     return app
