@@ -1,6 +1,7 @@
-from model.employee import Employee, Department, Job
-from utils.db import db
 from sqlalchemy import and_, text
+
+from app.model.employee import Employee, Department, Job
+from app.utils.db import db
 
 def count_employees_per_department_and_job_in_2021():
     return db.session.query(

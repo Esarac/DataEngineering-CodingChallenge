@@ -1,5 +1,5 @@
-from model.employee import Employee
-from utils.db import db
+from app.model.employee import Employee
+from app.utils.db import db
 
 def add_employees(employees: list[Employee]):
 

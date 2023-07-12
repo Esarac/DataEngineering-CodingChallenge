@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 
-from model.job import Job
-from services.jobs_service import add_jobs, get_jobs
+from app.model.job import Job
+from app.services.jobs_service import add_jobs, get_jobs
 
 jobs = Blueprint('jobs',__name__)
 

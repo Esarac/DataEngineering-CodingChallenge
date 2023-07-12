@@ -1,7 +1,7 @@
-from utils.db import db
+from app.utils.db import db
 
-from model.department import Department
-from model.job import Job
+from app.model.department import Department
+from app.model.job import Job
 
 class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -1,5 +1,5 @@
-from model.job import Job
-from utils.db import db
+from app.model.job import Job
+from app.utils.db import db
 
 def add_jobs(jobs: list[Job]):
 

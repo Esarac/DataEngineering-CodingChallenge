@@ -1,9 +1,9 @@
 import datetime
 from flask import Blueprint, request
 
-from model.employee import Employee
-from services.employees_service import add_employees, get_employees
-from services.stats_service import count_employees_per_department_and_job_in_2021, count_employees_per_department_greater_than_mean_in_2021
+from app.model.employee import Employee
+from app.services.employees_service import add_employees, get_employees
+from app.services.stats_service import count_employees_per_department_and_job_in_2021, count_employees_per_department_greater_than_mean_in_2021
 
 employees = Blueprint('employees',__name__)
 

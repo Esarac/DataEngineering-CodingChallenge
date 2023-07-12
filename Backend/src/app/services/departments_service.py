@@ -1,5 +1,5 @@
-from model.department import Department
-from utils.db import db
+from app.model.department import Department
+from app.utils.db import db
 
 def add_departments(departments: list[Department]):
 

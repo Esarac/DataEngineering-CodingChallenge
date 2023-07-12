@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 
-from model.department import Department
-from services.departments_service import add_departments, get_departments
+from app.model.department import Department
+from app.services.departments_service import add_departments, get_departments
 
 departments = Blueprint('departments',__name__)
 
