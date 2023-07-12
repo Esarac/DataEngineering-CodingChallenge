@@ -114,11 +114,11 @@ class TestPost:
 			'Content-Type': mimetype,
 			'Accept': mimetype
 		}
-		data = []
-		for i in range(1000):
-			data.append({
-				'name': 'Department {}'.format(i)
-			})
+		data = [
+			{
+				'name': 'Department ' + str(i)
+			} for i in range(1000)
+		]
 		url = '/departments/'
 
 		response = client.post(url, data=json.dumps(data), headers=headers)
@@ -180,7 +180,6 @@ class TestCSV:
 		response = client.post(url, data=files, headers=headers)
 
 		assert response.status_code == 400
-		print(response.data.decode("utf-8"))
 		assert "for column \\\'id\\\' at row 7" in response.data.decode("utf-8")
 
 		with client.application.app_context():
@@ -234,5 +233,3 @@ class TestCSV:
 
 		with client.application.app_context():
 			assert db.session.query(Department).count() == 0
-
-

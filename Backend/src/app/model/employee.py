@@ -21,7 +21,7 @@ class Employee(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "datetime": self.datetime.isoformat(),
+            "datetime": self.datetime.isoformat() if self.datetime else None,
             "department_id": self.department_id,
             "job_id": self.job_id
         }
