@@ -8,6 +8,7 @@ from app.utils.db import db
 from app.controller.employees_controller import employees
 from app.controller.departments_controller import departments
 from app.controller.jobs_controller import jobs
+from app.controller.stats_controller import stats
 
 load_dotenv()
 def create_app(env='prod'):
@@ -19,6 +20,7 @@ def create_app(env='prod'):
     app.register_blueprint(employees, url_prefix='/employees')
     app.register_blueprint(departments, url_prefix='/departments')
     app.register_blueprint(jobs, url_prefix='/jobs')
+    app.register_blueprint(stats, url_prefix='/stats')
 
     db.init_app(app)
     with app.app_context():
