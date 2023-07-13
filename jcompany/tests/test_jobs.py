@@ -146,10 +146,10 @@ class TestCSV:
 			csv_data = file.read()
 		csv_file = FileStorage(
 			stream=io.BytesIO(csv_data),
-			filename='your_csv_file.csv',
+			filename='csv_file.csv',
 			content_type='text/csv'
 		)
-		files = {'file': (csv_file, 'your_csv_file.csv')}
+		files = {'file': (csv_file, 'csv_file.csv')}
 
 		response = client.post(url, data=files, headers=headers)
 
@@ -172,10 +172,10 @@ class TestCSV:
 			csv_data = file.read()
 		csv_file = FileStorage(
 			stream=io.BytesIO(csv_data),
-			filename='your_csv_file.csv',
+			filename='csv_file.csv',
 			content_type='text/csv'
 		)
-		files = {'file': (csv_file, 'your_csv_file.csv')}
+		files = {'file': (csv_file, 'csv_file.csv')}
 
 		response = client.post(url, data=files, headers=headers)
 
@@ -200,10 +200,10 @@ class TestCSV:
 			csv_data = file.read()
 		csv_file = FileStorage(
 			stream=io.BytesIO(csv_data),
-			filename='your_csv_file.csv',
+			filename='csv_file.csv',
 			content_type='text/csv'
 		)
-		files = {'file': (csv_file, 'your_csv_file.csv')}
+		files = {'file': (csv_file, 'csv_file.csv')}
 
 		response = client.post(url, data=files, headers=headers)
 
