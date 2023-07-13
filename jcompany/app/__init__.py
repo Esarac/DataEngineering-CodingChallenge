@@ -5,10 +5,10 @@ from flask import Flask
 
 from app.utils.db import db
 
-from app.controller.employees_controller import employees
-from app.controller.departments_controller import departments
-from app.controller.jobs_controller import jobs
-from app.controller.stats_controller import stats
+from app.controllers.employees_controller import employees
+from app.controllers.departments_controller import departments
+from app.controllers.jobs_controller import jobs
+from app.controllers.stats_controller import stats
 
 load_dotenv()
 def create_app(env='prod'):

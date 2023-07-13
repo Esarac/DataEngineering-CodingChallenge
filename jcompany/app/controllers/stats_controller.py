@@ -11,10 +11,10 @@ def stats_2021():
     data = map(lambda row: {
         "department":  row[0]
         ,"job": row[1]
-        ,"Q1": row[2]
-        ,"Q2": row[3]
-        ,"Q3": row[4]
-        ,"Q4": row[5]
+        ,"Q1": int(row[2])
+        ,"Q2": int(row[3])
+        ,"Q3": int(row[4])
+        ,"Q4": int(row[5])
     }, data)
     return list(data)
 

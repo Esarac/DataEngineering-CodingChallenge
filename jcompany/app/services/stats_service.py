@@ -15,7 +15,7 @@ def count_employees_per_department_and_job_in_2021():
         .join(Department)\
         .join(Job)\
         .where(and_(Employee.datetime >= '2021-01-01', Employee.datetime < '2022-01-01'))\
-        .group_by(Department.name, Job.name)\
+        .group_by(Department.name, Department.id, Job.name, Job.id)\
         .order_by(Department.name.desc(), Job.name.desc())\
         .all()
 
@@ -54,7 +54,7 @@ def count_employees_per_department_greater_than_mean_in_2021():
 #         JOIN employee e ON d.id = e.department_id
 #         JOIN job j ON j.id = e.job_id
 #         WHERE e.datetime >= '2021-01-01' AND e.datetime < '2022-01-01'
-#         GROUP BY d.name, j.name
+#         GROUP BY d.name, d.id, j.name, j.id
 #         ORDER BY d.name DESC, j.name DESC
 #     """)
 #     return db.session.execute(query).fetchall()

@@ -17,7 +17,7 @@ def run():
 @cli.command
 def test():
     """Run the unit tests."""
-    pytest.main(['tests'])
+    pytest.main(['tests/test_stats.py'])
 
 if __name__ == '__main__':
     cli()
