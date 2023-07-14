@@ -12,7 +12,7 @@ def cli():
 def run():
     """Run the Flask application."""
     app = create_app()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 @cli.command
 def test():

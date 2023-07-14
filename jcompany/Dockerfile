@@ -1,9 +1,17 @@
-# FROM python:3.8-slim-buster
+FROM python:3.9-slim-buster
 
-# COPY requirements.txt requirements.txt
-# RUN pip install --upgrade pip
-# RUN pip3 install -r requirements.txt
+# Install build dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libmariadb-dev-compat \
+    libmariadb-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
-# COPY . .
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-# CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+COPY . .
+
+CMD [ "python3", "manage.py" , "run"]

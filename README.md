@@ -26,25 +26,20 @@ OLTP API for the insertion and analysis of company employees, departments, and j
 cd /../../project_folder
 ```
 
-2. Run the following command to run the database and *phpMyAdmin* (running on port 8888)
+2. Run the following command to run the containers 3 containers:
+
+- Flask API (port 5000)
+- MySQL (port 3306)
+- phpMyAdmin (port 8888)
 
 ```sh
 docker compose up
 ```
 
-3. Go inside the "jcompany" folder, create the virtual environment (venv) and install all the dependencies.
+3. Start using the API 🤗.
 
-```sh
-cd jcompany
-python -m venv venv
-# Run "activate" script inside the "venv/Scripts" folder
-pip install -r requirements.txt
 ```
-
-4. Run the application (port 5000).
-
-```sh
-py manage.py run
+http://localhost:5000
 ```
 
 ### Tests ▶️
