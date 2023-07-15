@@ -3,16 +3,13 @@ version: '3.1'
 services:
   db:
     image: mysql:5.7
-    command: --default-authentication-plugin=mysql_native_password
+    # command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_DATABASE: jcompany
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - ./db:/var/lib/mysql
-      - ./init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
 
@@ -24,10 +21,10 @@ services:
       PMA_USER: admin
       PMA_PASSWORD: admin
     ports:
-      - "8888:80"
+      - "80:80"
 
   flask-api:
-    build: jcompany/.
+    image: jcompany.azurecr.io/myflaskapi:latest
     restart: always
     ports:
       - "5000:5000"
@@ -38,6 +35,3 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
       MYSQL_DATABASE: jcompany
-
-volumes:
-  db:

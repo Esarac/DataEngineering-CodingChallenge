@@ -8,7 +8,7 @@ OLTP API for the insertion and analysis of company employees, departments, and j
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 ![MySql](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
-![Aws](https://img.shields.io/badge/Amazon_AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Azure](https://img.shields.io/badge/microsoft%20azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 
 ## Getting Started ✅
 
@@ -30,7 +30,7 @@ cd /../../project_folder
 
 - Flask API (port 5000)
 - MySQL (port 3306)
-- phpMyAdmin (port 8888)
+- phpMyAdmin (port 80)
 
 ```sh
 docker compose up
@@ -38,8 +38,16 @@ docker compose up
 
 3. Start using the API 🤗.
 
-```
+```sh
 http://localhost:5000
+```
+
+4. (Optional) You can try the version hosted on Azure 🫡.
+
+```sh
+http://52.226.230.142:5000 # API
+# or
+http://52.226.230.142 # phpMyAdmin
 ```
 
 ### Tests ▶️
