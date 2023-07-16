@@ -1,4 +1,6 @@
+# Login on Azure
 az login
+# Note: Comment the volumes from db service on the docker-compose.yml file 
 # Create Azure container registry
 az group create --name dataEngineerChallenge --location eastus
 az acr create --resource-group dataEngineerChallenge --name jcompany --sku Basic

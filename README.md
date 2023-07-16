@@ -52,7 +52,23 @@ http://52.226.230.142 # phpMyAdmin
 
 ### Tests ▶️
 
-In order to run the test cases, go inside the "jcompany" folder and execute the following command:
+If you have the containers up and running, follow the next steps to execute the test cases:
+
+1. Go inside the "jcompany" folder
+
+```sh
+cd jcompany
+```
+
+2. Create the virtual environment (venv) and install all the dependencies.
+
+```sh
+python -m venv venv
+# Run "activate" script inside the "venv/Scripts" folder
+pip install -r requirements.txt
+```
+
+3. Run the tests
 
 ```sh
 py manage.py test
