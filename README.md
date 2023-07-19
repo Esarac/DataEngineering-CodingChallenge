@@ -65,6 +65,7 @@ cd jcompany
 ```sh
 python -m venv venv
 # Run "activate" script inside the "venv/Scripts" folder
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 

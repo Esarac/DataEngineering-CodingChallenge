@@ -8,10 +8,12 @@ RUN apt-get update && apt-get install -y \
     pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
+# Install dateutil
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "manage.py" , "run"]
+
+CMD [ "python3", "manage.py", "run" ]

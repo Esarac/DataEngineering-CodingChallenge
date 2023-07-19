@@ -1,4 +1,4 @@
-import datetime
+from dateutil.parser import isoparse
 from flask import Blueprint, request, Response
 
 from app.model.employee import Employee
@@ -13,7 +13,7 @@ def home():
         if request.method == 'POST':
             new_employees = map(lambda employee: Employee(
                 employee["name"],
-                datetime.datetime.fromisoformat(employee["datetime"]) if employee["datetime"] != None else employee["datetime"],
+                isoparse(employee["datetime"]) if employee["datetime"] != None else employee["datetime"],
                 employee["department_id"],
                 employee["job_id"]
             ), request.json)
@@ -36,7 +36,7 @@ def csv():
 
         new_employees = map(lambda employee: Employee(
             employee[1],
-            datetime.datetime.fromisoformat(employee[2]) if employee[2] != '' else None,
+            isoparse(employee[2]) if employee[2] != '' else None,
             employee[3] if employee[3] != '' else None,
             employee[4] if employee[4] != '' else None,
             id = employee[0]

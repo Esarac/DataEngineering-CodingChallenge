@@ -25,7 +25,7 @@ services:
       - "80:80"
 
   flask-api:
-    image: jcompany.azurecr.io/myflaskapi:latest
+    build: jcompany/.
     restart: always
     ports:
       - "5000:5000"
